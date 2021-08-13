@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SampleApplication</string>
+    <string name="enter_first_number">Enter the first number.</string>
+    <string name="textview">TextView</string>
+    <string name="button">Find the Sum</string>
+    <string name="enter_second_number">Enter second number.</string>
+</resources>
