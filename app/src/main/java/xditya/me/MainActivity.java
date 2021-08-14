@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,16 +30,20 @@ public class MainActivity extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String num1 = etDetails1.getText().toString().trim();
-                String num2 = etDetails2.getText().toString().trim();
+                String temp1 = etDetails1.getText().toString();
+                String temp2 = etDetails2.getText().toString();
 
+                if (temp1.isEmpty() || temp2.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Please enter values in all fields!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                String num1 = temp1.trim();
+                String num2 = temp2.trim();
                 // find sum
 
                 int sum = Integer.parseInt(num1) + Integer.parseInt(num2);
                 String output = "The sum of " + num1 + " and " + num2 + " is " + sum;
-
-                if (output.length() == 0)
-                    return;
 
                 tvPrint.setText(output);
 
